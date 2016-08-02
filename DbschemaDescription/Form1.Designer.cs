@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDbTableName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ddlTable = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -113,11 +114,21 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "資料庫名稱";
             // 
+            // ddlTable
+            // 
+            this.ddlTable.FormattingEnabled = true;
+            this.ddlTable.Location = new System.Drawing.Point(407, 23);
+            this.ddlTable.Name = "ddlTable";
+            this.ddlTable.Size = new System.Drawing.Size(303, 23);
+            this.ddlTable.TabIndex = 9;
+            this.ddlTable.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 253);
+            this.Controls.Add(this.ddlTable);
             this.Controls.Add(this.txtDbTableName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDbPassword);
@@ -145,6 +156,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDbTableName;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox ddlTable;
     }
 }
 

@@ -53,7 +53,7 @@ namespace DbschemaDescription
             string dbAccountStr = txtDbAccount.Text.Trim();
             string dbPasswordStr = txtDbPassword.Text.Trim();
             string dbTableNamedStr = txtDbTableName.Text.Trim();
-         
+
             #region 檢查輸入資料
             if (string.IsNullOrEmpty(dbConnectStr))
             {
@@ -77,8 +77,8 @@ namespace DbschemaDescription
             }
 
             #endregion
-            //登入
 
+            //登入
             SqlConnection sqlconnection = new SqlConnection();
             sqlconnection.ConnectionString = "Data Source=" + dbConnectStr + ";Initial Catalog=" + dbTableNamedStr + ";User ID=" + dbAccountStr + ";Password=" + dbPasswordStr + ";";
             sqlconnection.Open();
@@ -87,10 +87,31 @@ namespace DbschemaDescription
             sqlcommand.CommandText = "SELECT TABLE_NAME, TABLE_TYPE  FROM INFORMATION_SCHEMA.TABLES   ";
             sqlcommand.CommandText += " ORDER BY TABLE_NAME ";
             SqlDataReader reader = sqlcommand.ExecuteReader();
-            DataTable readertable = new DataTable();
-            readertable.Load(reader);
+            DataTable readerTable = new DataTable();
+            readerTable.Load(reader);
             reader.Close();
 
+            //顯示資料庫中資料表清單
+            ddlTable.Visible = true;
+            List<ComboItem> tableLists = new List<ComboItem>();
+            foreach (DataRow dr in readerTable.Rows)
+            {
+                ComboItem otable = new ComboItem();
+                otable.Value = dr["TABLE_NAME"].ToString();
+                otable.Text = dr["TABLE_NAME"].ToString()+"("+dr["TABLE_TYPE"].ToString()+")";
+                tableLists.Add(otable);
+            }
+            ddlTable.DataSource = tableLists;
+            ddlTable.DisplayMember = "Text";
+            ddlTable.ValueMember = "Value";
+
+
+        }
+
+        private class ComboItem
+        {
+            public string Value { get; set; }
+            public string Text { get; set; }
         }
     }
 }
