@@ -35,6 +35,8 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.txtDbPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtDbTableName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -95,11 +97,29 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "密碼";
             // 
+            // txtDbTableName
+            // 
+            this.txtDbTableName.Location = new System.Drawing.Point(100, 120);
+            this.txtDbTableName.Name = "txtDbTableName";
+            this.txtDbTableName.Size = new System.Drawing.Size(192, 25);
+            this.txtDbTableName.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 123);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "資料庫名稱";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 253);
+            this.Controls.Add(this.txtDbTableName);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDbPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDbAccount);
@@ -123,6 +143,8 @@
         private System.Windows.Forms.Label Label2;
         private System.Windows.Forms.TextBox txtDbPassword;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDbTableName;
+        private System.Windows.Forms.Label label4;
     }
 }
 
