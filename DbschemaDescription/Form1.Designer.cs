@@ -38,6 +38,7 @@
             this.txtDbTableName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ddlTable = new System.Windows.Forms.ComboBox();
+            this.btnExport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -123,11 +124,23 @@
             this.ddlTable.TabIndex = 9;
             this.ddlTable.Visible = false;
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(389, 57);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(135, 23);
+            this.btnExport.TabIndex = 10;
+            this.btnExport.Text = "匯出資料庫結構";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Visible = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 253);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.ddlTable);
             this.Controls.Add(this.txtDbTableName);
             this.Controls.Add(this.label4);
@@ -157,6 +170,7 @@
         private System.Windows.Forms.TextBox txtDbTableName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox ddlTable;
+        private System.Windows.Forms.Button btnExport;
     }
 }
 
